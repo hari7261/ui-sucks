@@ -1,0 +1,55 @@
+name: Branch Hygiene
+
+on:
+  pull_request_target:
+    types:
+      - closed
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  delete-merged-branch:
+    name: Delete merged branch
+    if: github.event.pull_request.merged == true && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref != github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Delete merged branch when it is no longer referenced
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branch = context.payload.pull_request.head.ref;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const { data: pulls } = await github.rest.pulls.list({
+              owner,
+              repo,
+              state: 'open',
+              head: `${owner}:${branch}`,
+              per_page: 1,
+            });
+
+            if (pulls.length > 0) {
+              core.info(`Skipping delete because "${branch}" still has an open pull request.`);
+              return;
+            }
+
+            try {
+              await github.rest.git.deleteRef({
+                owner,
+                repo,
+                ref: `heads/${branch}`,
+              });
+              core.info(`Deleted merged branch "${branch}".`);
+            } catch (error) {
+              if ([403, 404, 422].includes(error.status)) {
+                core.warning(`Skipping delete for "${branch}": ${error.message}`);
+                return;
+              }
+
+              throw error;
+            }

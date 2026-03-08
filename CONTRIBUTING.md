@@ -23,6 +23,7 @@ corepack pnpm test
 1. Create a branch from `main`.
 2. Make focused changes with tests where behavior changes.
 3. Run the smoke suite before opening a pull request.
+   CI runs the same validation on every branch push and on pull requests targeting `main`.
 
 ```bash
 corepack pnpm smoke
@@ -51,6 +52,7 @@ Good pull requests include:
 - Screenshots or clips when behavior is visual
 - Test updates for behavioral changes
 - Documentation updates for public API changes
+- A branch that stays green in CI and is safe to delete after merge
 
 ## Release Notes
 
