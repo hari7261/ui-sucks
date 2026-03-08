@@ -160,7 +160,7 @@ export const ToastViewport = React.forwardRef<HTMLDivElement, ToastViewportProps
       <div {...props} ref={forwardedRef} role="region" aria-label="Notifications">
         {toasts.map((toast) => (
           <Toast
-            key={toast.id}
+            key={toast.key}
             duration={toast.duration ?? defaultDuration}
             role={toast.role ?? 'status'}
             defaultOpen

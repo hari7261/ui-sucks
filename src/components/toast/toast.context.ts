@@ -1,8 +1,16 @@
 import * as React from 'react';
 
-import type { ToastController } from './toast.types';
+import type { ToastController, ToastRecord } from './toast.types';
 
-const ToastContext = React.createContext<ToastController | null>(null);
+export interface ToastStateRecord extends ToastRecord {
+  key: number;
+}
+
+export interface ToastContextValue extends Omit<ToastController, 'toasts'> {
+  toasts: ToastStateRecord[];
+}
+
+const ToastContext = React.createContext<ToastContextValue | null>(null);
 
 export function useToastContext(componentName: string) {
   const context = React.useContext(ToastContext);
