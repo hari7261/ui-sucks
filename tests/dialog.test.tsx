@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 
@@ -35,10 +35,13 @@ describe('Dialog', () => {
     expect(dialog).toBeInTheDocument();
     expect(trigger).toHaveAttribute('aria-expanded', 'true');
 
-    await user.keyboard('{Escape}');
+    fireEvent.keyDown(dialog, { key: 'Escape' });
 
     await waitFor(() => {
       expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
+
+    await waitFor(() => {
       expect(trigger).toHaveFocus();
     });
   });
