@@ -1,0 +1,10 @@
+node_modules
+dist
+coverage
+.next
+.turbo
+.DS_Store
+*.log
+pnpm-debug.log*
+examples/vite/dist
+examples/nextjs/.next

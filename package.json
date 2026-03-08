@@ -1,0 +1,129 @@
+{
+  "name": "ui-sucks",
+  "version": "0.1.0",
+  "description": "A lightweight, tree-shakeable, headless React UI component library for production-grade design systems.",
+  "license": "MIT",
+  "author": "Hariom Kumar Pandit <hariompandit5556@gmail.com>",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hari7261/ui-sucks.git"
+  },
+  "homepage": "https://github.com/hari7261/ui-sucks#readme",
+  "bugs": {
+    "url": "https://github.com/hari7261/ui-sucks/issues"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./button": {
+      "types": "./dist/button.d.ts",
+      "import": "./dist/button.js",
+      "require": "./dist/button.cjs"
+    },
+    "./dialog": {
+      "types": "./dist/dialog.d.ts",
+      "import": "./dist/dialog.js",
+      "require": "./dist/dialog.cjs"
+    },
+    "./toast": {
+      "types": "./dist/toast.d.ts",
+      "import": "./dist/toast.js",
+      "require": "./dist/toast.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@10.6.5",
+  "keywords": [
+    "react",
+    "headless",
+    "component-library",
+    "typescript",
+    "ui",
+    "accessibility",
+    "tree-shaking",
+    "design-system",
+    "primitives",
+    "tsup",
+    "vitest"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "lint": "eslint . --ext .ts,.tsx --max-warnings=0",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "size": "size-limit",
+    "smoke": "corepack pnpm lint && corepack pnpm typecheck && corepack pnpm build && corepack pnpm test && corepack pnpm size",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "corepack pnpm build && changeset publish"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.2",
+    "@size-limit/preset-small-lib": "^11.2.0",
+    "@testing-library/jest-dom": "^6.6.4",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.13.10",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "@vitejs/plugin-react": "^4.4.1",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "jsdom": "^26.0.0",
+    "next": "^14.2.25",
+    "prettier": "^3.5.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "size-limit": "^11.2.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.1",
+    "vitest": "^3.0.8"
+  },
+  "size-limit": [
+    {
+      "name": "button",
+      "path": "dist/button.js",
+      "limit": "10 KB"
+    },
+    {
+      "name": "dialog",
+      "path": "dist/dialog.js",
+      "limit": "10 KB"
+    },
+    {
+      "name": "toast",
+      "path": "dist/toast.js",
+      "limit": "10 KB"
+    }
+  ]
+}

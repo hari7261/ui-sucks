@@ -1,0 +1,53 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="preview-title preview-desc">
+  <title id="preview-title">ui-sucks repository preview</title>
+  <desc id="preview-desc">A social preview graphic showing ui-sucks as a premium headless React primitive library.</desc>
+  <defs>
+    <linearGradient id="preview-bg" x1="48" y1="48" x2="1230" y2="592" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6EFE5"/>
+      <stop offset="0.52" stop-color="#E9E0D3"/>
+      <stop offset="1" stop-color="#BCD1D1"/>
+    </linearGradient>
+    <radialGradient id="preview-a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(250 130) rotate(21) scale(260 220)">
+      <stop stop-color="#F5B77B" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#F5B77B" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="preview-b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1010 180) rotate(12) scale(270 210)">
+      <stop stop-color="#3D8D97" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#3D8D97" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="preview-shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#2E4A53" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="640" rx="30" fill="url(#preview-bg)"/>
+  <ellipse cx="250" cy="130" rx="260" ry="220" fill="url(#preview-a)"/>
+  <ellipse cx="1010" cy="180" rx="270" ry="210" fill="url(#preview-b)"/>
+
+  <rect x="48" y="48" width="1184" height="544" rx="32" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.45" filter="url(#preview-shadow)"/>
+
+  <text x="94" y="176" fill="#143039" font-family="Segoe UI, Arial, sans-serif" font-size="68" font-weight="700">ui-sucks</text>
+  <text x="94" y="228" fill="#435F67" font-family="Segoe UI, Arial, sans-serif" font-size="28">Production-grade headless React UI primitives</text>
+  <text x="94" y="274" fill="#6E5D4D" font-family="Segoe UI, Arial, sans-serif" font-size="20">Tree-shakeable • TypeScript-first • Accessibility-first • Minimal dependencies</text>
+
+  <g transform="translate(94 346)">
+    <rect width="180" height="84" rx="22" fill="#FFFFFF" fill-opacity="0.18" stroke="#FFFFFF" stroke-opacity="0.44"/>
+    <text x="20" y="46" fill="#143039" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Button</text>
+  </g>
+  <g transform="translate(292 346)">
+    <rect width="180" height="84" rx="22" fill="#FFFFFF" fill-opacity="0.18" stroke="#FFFFFF" stroke-opacity="0.44"/>
+    <text x="20" y="46" fill="#143039" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Dialog</text>
+  </g>
+  <g transform="translate(490 346)">
+    <rect width="180" height="84" rx="22" fill="#FFFFFF" fill-opacity="0.18" stroke="#FFFFFF" stroke-opacity="0.44"/>
+    <text x="20" y="46" fill="#143039" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Toast</text>
+  </g>
+  <g transform="translate(730 330)">
+    <rect width="408" height="164" rx="28" fill="#143039" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.44"/>
+    <text x="28" y="50" fill="#143039" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Roadmap Preview</text>
+    <text x="28" y="86" fill="#435F67" font-family="Segoe UI, Arial, sans-serif" font-size="18">Input • Select • Tabs • Popover • Tooltip</text>
+    <text x="28" y="118" fill="#435F67" font-family="Segoe UI, Arial, sans-serif" font-size="18">Dropdown • Pagination • Avatar • Bento Grid</text>
+  </g>
+
+  <text x="94" y="540" fill="#435F67" font-family="Segoe UI, Arial, sans-serif" font-size="18">Created by Hariom Kumar Pandit</text>
+</svg>

@@ -1,0 +1,12 @@
+src
+tests
+examples
+.github
+.changeset
+coverage
+tsconfig.json
+tsup.config.ts
+vitest.config.ts
+.eslintrc.json
+.prettierrc
+pnpm-workspace.yaml
