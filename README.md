@@ -3,7 +3,9 @@
 <p align="center">
   <a href="https://github.com/hari7261/ui-sucks/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/hari7261/ui-sucks/ci.yml?branch=main&label=CI&style=for-the-badge" alt="CI status" /></a>
   <a href="https://www.npmjs.com/package/ui-sucks"><img src="https://img.shields.io/npm/v/ui-sucks?style=for-the-badge&label=npm" alt="npm version" /></a>
-  <a href="https://www.npmjs.com/package/ui-sucks"><img src="https://img.shields.io/npm/dm/ui-sucks?style=for-the-badge&label=downloads" alt="npm downloads" /></a>
+  <a href="https://www.npmjs.com/package/ui-sucks">
+  <img src="https://img.shields.io/npm/dm/ui-sucks?style=for-the-badge&label=downloads" alt="npm downloads" />
+</a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/hari7261/ui-sucks?style=for-the-badge" alt="MIT license" /></a>
   <img src="https://img.shields.io/badge/docs-v1-c66a28?style=for-the-badge" alt="Documentation version 1" />
   <img src="https://img.shields.io/badge/react-18%2B-0f766e?style=for-the-badge" alt="React 18+" />
