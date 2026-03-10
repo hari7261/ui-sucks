@@ -6,6 +6,7 @@ export default defineConfig({
     button: 'src/components/button/index.ts',
     dialog: 'src/components/dialog/index.ts',
     toast: 'src/components/toast/index.ts',
+    ui: 'src/components/ui/index.ts',
   },
   format: ['esm', 'cjs'],
   dts: true,

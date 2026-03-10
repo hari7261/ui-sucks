@@ -1,6 +1,6 @@
 {
   "name": "ui-sucks",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A lightweight, tree-shakeable, headless React UI component library for production-grade design systems.",
   "license": "MIT",
   "author": "Hariom Kumar Pandit <hariompandit5556@gmail.com>",
@@ -36,6 +36,11 @@
       "types": "./dist/toast.d.ts",
       "import": "./dist/toast.js",
       "require": "./dist/toast.cjs"
+    },
+    "./ui": {
+      "types": "./dist/ui.d.ts",
+      "import": "./dist/ui.js",
+      "require": "./dist/ui.cjs"
     },
     "./package.json": "./package.json"
   },

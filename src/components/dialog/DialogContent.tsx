@@ -21,6 +21,7 @@ export const DialogContent = React.forwardRef<HTMLDivElement, DialogContentProps
     hidden,
     role = 'dialog',
     tabIndex = -1,
+    style,
     ...contentProps
   } = props;
   const {
@@ -180,6 +181,26 @@ export const DialogContent = React.forwardRef<HTMLDivElement, DialogContentProps
       aria-describedby={hasDescription ? descriptionId : undefined}
       data-state={open ? 'open' : 'closed'}
       onKeyDown={handleKeyDown}
+      style={
+        style
+          ? {
+              background: 'var(--ui-glass-strong, rgba(255, 255, 255, 0.14))',
+              border: '1px solid var(--ui-border, rgba(255, 255, 255, 0.18))',
+              color: 'var(--ui-text, #f6f4f0)',
+              borderRadius: 'var(--ui-radius, 16px)',
+              padding: 20,
+              boxShadow: 'var(--ui-shadow, 0 20px 60px rgba(10, 16, 19, 0.35))',
+              ...style,
+            }
+          : {
+              background: 'var(--ui-glass-strong, rgba(255, 255, 255, 0.14))',
+              border: '1px solid var(--ui-border, rgba(255, 255, 255, 0.18))',
+              color: 'var(--ui-text, #f6f4f0)',
+              borderRadius: 'var(--ui-radius, 16px)',
+              padding: 20,
+              boxShadow: 'var(--ui-shadow, 0 20px 60px rgba(10, 16, 19, 0.35))',
+            }
+      }
     />
   );
 

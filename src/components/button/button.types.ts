@@ -5,4 +5,6 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   pressed?: boolean;
   defaultPressed?: boolean;
   onPressedChange?: (pressed: boolean) => void;
+  variant?: 'solid' | 'ghost' | 'glass';
+  size?: 'sm' | 'md' | 'lg';
 }

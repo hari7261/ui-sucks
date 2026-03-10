@@ -17,6 +17,7 @@ export const Toast = React.forwardRef<HTMLDivElement, ToastProps>((props, forwar
     onFocus,
     onBlur,
     children,
+    style,
     ...toastProps
   } = props;
   const [isOpen, setOpen] = useControllableState<boolean>({
@@ -144,6 +145,26 @@ export const Toast = React.forwardRef<HTMLDivElement, ToastProps>((props, forwar
       onPointerLeave={handlePointerLeave}
       onFocus={handleFocus}
       onBlur={handleBlur}
+      style={
+        style
+          ? {
+              padding: 14,
+              borderRadius: 14,
+              background: 'var(--ui-glass-strong, rgba(255, 255, 255, 0.14))',
+              border: '1px solid var(--ui-border, rgba(255, 255, 255, 0.18))',
+              color: 'var(--ui-text, #f6f4f0)',
+              boxShadow: 'var(--ui-shadow, 0 20px 60px rgba(10, 16, 19, 0.35))',
+              ...style,
+            }
+          : {
+              padding: 14,
+              borderRadius: 14,
+              background: 'var(--ui-glass-strong, rgba(255, 255, 255, 0.14))',
+              border: '1px solid var(--ui-border, rgba(255, 255, 255, 0.18))',
+              color: 'var(--ui-text, #f6f4f0)',
+              boxShadow: 'var(--ui-shadow, 0 20px 60px rgba(10, 16, 19, 0.35))',
+            }
+      }
     >
       {children}
     </div>
@@ -153,11 +174,36 @@ export const Toast = React.forwardRef<HTMLDivElement, ToastProps>((props, forwar
 Toast.displayName = 'Toast';
 
 export const ToastViewport = React.forwardRef<HTMLDivElement, ToastViewportProps>(
-  ({ children, ...props }, forwardedRef) => {
+  ({ children, style, ...props }, forwardedRef) => {
     const { toasts, dismiss, defaultDuration } = useToastContext('ToastViewport');
 
     return (
-      <div {...props} ref={forwardedRef} role="region" aria-label="Notifications">
+      <div
+        {...props}
+        ref={forwardedRef}
+        role="region"
+        aria-label="Notifications"
+        style={
+          style
+            ? {
+                position: 'fixed',
+                right: 24,
+                bottom: 24,
+                display: 'grid',
+                gap: 12,
+                width: 'min(90vw, 320px)',
+                ...style,
+              }
+            : {
+                position: 'fixed',
+                right: 24,
+                bottom: 24,
+                display: 'grid',
+                gap: 12,
+                width: 'min(90vw, 320px)',
+              }
+        }
+      >
         {toasts.map((toast) => (
           <Toast
             key={toast.key}
